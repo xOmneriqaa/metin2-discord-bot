@@ -2147,10 +2147,10 @@ client.on(Events.InteractionCreate, async (interaction) => {
       const minYangStr = interaction.fields.getTextInputValue('input_min_yang').trim();
       const maxYangStr = interaction.fields.getTextInputValue('input_max_yang').trim();
 
-      const minWon = minWonStr ? parseInt(minWonStr, 10) : 0;
-      const maxWon = maxWonStr ? parseInt(maxWonStr, 10) : 0;
-      const minYang = minYangStr ? parseInt(minYangStr, 10) : 0;
-      const maxYang = maxYangStr ? parseInt(maxYangStr, 10) : 0;
+      const minWon = minWonStr ? parseFloat(minWonStr) : 0;
+      const maxWon = maxWonStr ? parseFloat(maxWonStr) : 0;
+      const minYang = minYangStr ? parseFloat(minYangStr) : 0;
+      const maxYang = maxYangStr ? parseFloat(maxYangStr) : 0;
 
       if (isNaN(minWon) || minWon < 0 || isNaN(maxWon) || maxWon < 0 ||
           isNaN(minYang) || minYang < 0 || isNaN(maxYang) || maxYang < 0) {
